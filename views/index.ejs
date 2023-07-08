@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message Board</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Message Board</h1>
+    <a href="/new" class="add-message">Add a Message</a>
+    <div class="messages">
+      <% for (let i = 0; i < locals.messages.length; i++) { %>
+        <div class="message">
+            <p class="message-head"><span class="user"><%= locals.messages[i].user %></span> at <span class="time"><%= locals.messages[i].time %></span></p>
+            <p class="message-body"><%= locals.messages[i].text %></p>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>
